@@ -14,8 +14,6 @@ Goals:
 This notation is a tradeoff between XML/XSD and JSON/JsonSchema.
 
 
-The projects in this repository describe the syntax and contains a parser built with Xtext.
-
 
 QON untyped sample:
 
