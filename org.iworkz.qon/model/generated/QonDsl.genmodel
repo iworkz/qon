@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.iworkz.qon/src-gen" editDirectory="/org.iworkz.qon.edit/src"
+    editorDirectory="/org.iworkz.qon.editor/src" modelPluginID="org.iworkz.qon" forceOverwrite="true"
+    modelName="QonDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.iworkz.qon.edit"
+    editorPluginID="org.iworkz.qon.editor" runtimeVersion="2.10">
+  <genPackages prefix="QonDsl" basePackage="org.iworkz.qon" disposableProviderFactory="true"
+      fileExtensions="qon" ecorePackage="QonDsl.ecore#/">
+    <genClasses ecoreClass="QonDsl.ecore#//QRoot"/>
+    <genClasses ecoreClass="QonDsl.ecore#//QObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QObject/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QObject/systemProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QObject/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QSystemProperty"/>
+    <genClasses ecoreClass="QonDsl.ecore#//NamespaceProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//NamespaceProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//SchemaProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QonDsl.ecore#//SchemaProperty/link"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//ImportProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QonDsl.ecore#//ImportProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//QProperty/propertyName"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QLinkProperty"/>
+    <genClasses ecoreClass="QonDsl.ecore#//QLinkObjectProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QLinkObjectProperty/link"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QLinkArrayProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QLinkArrayProperty/links"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QValueProperty"/>
+    <genClasses ecoreClass="QonDsl.ecore#//QObjectProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QObjectProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QStringValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//QStringValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QNumberValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//QNumberValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QBooleanValueProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QBooleanValueProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QNullValueProperty"/>
+    <genClasses ecoreClass="QonDsl.ecore#//QObjectArrayProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QonDsl.ecore#//QObjectArrayProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QStringArrayProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//QStringArrayProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QNumberArrayProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//QNumberArrayProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="QonDsl.ecore#//QEmptyArrayProperty"/>
+    <genClasses ecoreClass="QonDsl.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//BooleanValue/true"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QonDsl.ecore#//BooleanValue/false"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

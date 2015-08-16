@@ -1,0 +1,135 @@
+grammar org.iworkz.qon.QonDsl with org.eclipse.xtext.common.Terminals
+
+generate qonDsl "http://www.iworkz.org/qon/QonDsl"
+
+
+/*
+ * 
+ * Qualified Object Notation (QON)
+ * 
+ */
+
+QRoot: {QObject}
+	(type=[QObject|ID])?
+	'{'
+		(systemProperties+=QSystemProperty)*
+		(properties+=QProperty)*
+	'}'
+;
+	
+QObject: {QObject}
+	(type=[QObject|ID])?
+	'{'
+	(properties+=QProperty)*
+	'}'
+;
+
+QSystemProperty:
+	NamespaceProperty | SchemaProperty | ImportProperty
+;
+
+NamespaceProperty:
+	'$namespace' ':' value=STRING
+;
+
+SchemaProperty:
+	'$schema' '-' '>' link=[QObject|STRING]
+;
+
+ImportProperty: {ImportProperty}
+	'$imports' ':'  
+	'['
+	(values+=Import (',' values+=Import)*)?
+	']'
+;
+
+Import:
+	importedNamespace=STRING
+;
+
+QProperty:
+	QValueProperty | QLinkProperty
+;
+
+QLinkProperty:
+	QLinkObjectProperty | QLinkArrayProperty
+;
+
+QLinkObjectProperty:
+	propertyName=ID '-' '>' link=[QObject|STRING]
+;
+
+QLinkArrayProperty:
+	propertyName=ID '-' '>'
+	'['
+	(links+=[QObject|STRING] (',' links+=[QObject|STRING])*)?
+	']'
+;
+
+QValueProperty:
+	QStringValueProperty | QNumberValueProperty | QBooleanValueProperty | QNullValueProperty | QObjectProperty | QStringArrayProperty | QObjectArrayProperty  | QNumberArrayProperty | QEmptyArrayProperty
+;
+
+QObjectProperty:
+	propertyName=ID ':' value=QObject
+;
+
+QStringValueProperty:
+	propertyName=ID ':' value=STRING
+;
+
+QNumberValueProperty:
+	propertyName=ID ':' value=Number
+;
+
+QBooleanValueProperty:
+	propertyName=ID ':' value=BooleanValue
+;
+
+QNullValueProperty:
+	propertyName=ID ':' 'null'
+;
+
+QObjectArrayProperty:
+	propertyName=ID ':'
+	'['
+	values+=QObject (',' values+=QObject)*
+	']'
+;
+
+QStringArrayProperty:
+	propertyName=ID ':'
+	'['
+	values+=STRING (',' values+=STRING)*
+	']'
+;
+
+QNumberArrayProperty:
+	propertyName=ID ':'
+	'['
+	values+=Number (',' values+=Number)*
+	']'
+;
+
+QEmptyArrayProperty:
+	propertyName=ID ':'
+	'['
+	']'
+;
+
+BooleanValue:
+	true?= 'true' | false?='false'
+;
+
+Number hidden():
+	('-')? INT ('.' INT)? (('e' | 'E') ('+' | '-') INT)?
+;
+
+QualifiedName hidden():
+  ID ('.' ID)*
+;
+  
+QualifiedNameWithWildCard hidden():
+  QualifiedName '.*'?
+;
+  
