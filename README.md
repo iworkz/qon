@@ -2,8 +2,10 @@
 
 Notation to describe object data (for storage and transport).
 
+This notation is a tradeoff between XML/XSD and JSON/JsonSchema.
 
-Goals:
+
+### Goals:
 
 * Simple and easy to read
 * Efficient to parse and process
@@ -11,9 +13,7 @@ Goals:
 * Allow referencing of objects
 
 
-This notation is a tradeoff between XML/XSD and JSON/JsonSchema.
-
-
+### Samples:
 
 QON untyped sample:
 
