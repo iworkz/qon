@@ -1,0 +1,137 @@
+{
+	$namespace: "org.iworkz.qon.schema"
+	
+	/*
+	 * Types to define a 'Qualified Object Notation' schema.
+	 */
+	
+	types : [
+		
+		/* 
+		 * Common base type for schema definition
+		 */
+	
+		{
+			name: "Type"
+		},
+		
+	
+		/* 
+		 * Scalar types for schema definition
+		 */
+		
+		{
+			name: "string"
+			extends -> "Type"
+		}, 
+		{
+			name: "number"
+			extends -> "Type"
+		}, 
+		{
+			name: "boolean"
+			extends -> "Type"
+		},
+
+			
+		/* 
+		 * Composed types for schema definition
+		 */
+		 
+		{
+			name: "Schema"
+			properties: [
+				{
+					name: "name"
+					type -> "string"
+				}, 
+				{
+					name: "type"
+					type -> "ComplexType"
+					isReference: true
+				}, 
+				{
+					name: "properties"
+					type -> "Property"
+					isArray: true
+				}, 
+				{
+					name: "types"
+					type -> "ComplexType"
+					isArray: true
+				}
+			]
+		}, 
+		{
+			name: "ComplexType"
+			extends -> "Type"
+			properties: [
+				{
+					name: "name"
+					type -> "string"
+				}, 
+				{
+					name: "title"
+					type -> "string"
+				}, 
+				{
+					name: "type"
+					type -> "Type"
+				}, 
+				{
+					name: "required"
+					type -> "boolean"
+				}, 
+				{
+					name: "identification"
+					type -> "Property"
+				}, 
+				{
+					name: "extends"
+					type -> "Type"
+					isReference: true
+				}, 
+				{
+					name: "properties"
+					type -> "Property"
+					isArray: true
+				}
+			]
+		}, 
+		{
+			name: "Property"
+			properties: [
+				{
+					name: "name"
+					type -> "string"
+				}, 
+				{
+					name: "type"
+					type -> "Type"
+					isReference: true
+				}, 
+				{
+					name: "isIdentifier"
+					type -> "boolean"
+				}, 
+				{
+					name: "isRequired"
+					type -> "boolean"
+				}, 
+				{
+					name: "isArray"
+					type -> "boolean"
+				}, 
+				{
+					name: "isReference"
+					type -> "boolean"
+				}, 
+				{
+					name: "description"
+					type -> "string"
+				}
+			]
+		}
+	]
+}
+

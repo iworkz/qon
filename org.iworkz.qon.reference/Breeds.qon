@@ -1,0 +1,14 @@
+{	
+	$namespace: "org.iworkz.qon.reference.countries"
+	$schema -> "org.iworkz.qon.reference.schema.ReferenceSchema"
+	
+	breeds: [
+		Breed {
+			name: "Border Collie"
+		},
+		Breed {
+			name: "British Shorthair"
+		}
+	]
+
+}

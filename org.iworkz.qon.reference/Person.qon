@@ -1,0 +1,29 @@
+Person {	
+	
+	$namespace: "org.iworkz.qon.reference"
+	$imports : [
+		"org.iworkz.qon.reference.countries.*",
+		"org.iworkz.qon.reference.breeds.*"
+	] 
+	$schema -> "org.iworkz.qon.reference.schema.ReferenceSchema"
+	
+	name: "Stephan"
+	address: {
+		street: "Peter-Jordan-Strasse"
+		zip: "1180"
+		city: "Vienna"
+		country-> "Austria"
+	}
+	pets: [ 
+		Dog {	
+			name: "Timmy"
+			breed-> "Border Collie"
+			dogTag: 12345678
+		},
+		Cat {	
+			name: "Tigger"
+			breed-> "British Shorthair"
+		}
+	]
+}
+

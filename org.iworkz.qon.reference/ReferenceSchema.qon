@@ -1,0 +1,114 @@
+Schema {
+	
+	$namespace: "org.iworkz.qon.reference.schema" 
+	$imports: [
+		"org.iworkz.qon.schema.*"
+	]
+	
+	name: "ReferenceSchema"
+	
+	types: [
+		
+		ComplexType {
+			name: "Object"
+		},
+		
+		ComplexType {
+			name: "Person"
+			extends -> "Object"
+			properties: [
+				Property {
+					name: "name" 
+					type -> "string"
+				},
+				Property {
+					name: "address" 
+					type -> "Address"
+				},
+				Property {
+					name: "pets" 
+					type -> "Pet"
+					isArray: true
+				}
+			]
+		},
+		
+		ComplexType {
+			name: "Address"
+			extends -> "Object"
+			properties: [
+				Property {
+					name: "street" 
+					type -> "string"
+				},
+				Property {
+					name: "zip" 
+					type -> "string"
+				},
+				Property {
+					name: "city" 
+					type -> "string"
+				},
+				Property {
+					name: "country" 
+					type -> "Country"
+				}
+			]
+		},
+		
+		ComplexType {
+			name: "Country"
+			extends -> "Object"
+			properties: [
+				Property {
+					name: "name" 
+					type -> "string"
+				}
+			]
+		},
+		
+		ComplexType {
+			name: "Pet"
+			extends -> "Object"
+			properties: [
+				Property {
+					name: "name" 
+					type -> "string"
+				},
+				Property {
+					name: "breed" 
+					type -> "Breed"
+				}
+			]
+		},
+		
+		ComplexType {
+			name: "Dog"
+			extends -> "Pet"
+			properties: [
+				Property {
+					name: "dogTag" 
+					type : "string"
+				}
+			]
+		},
+		
+		ComplexType {
+			name: "Cat"
+			extends -> "Pet"
+		},
+		
+		ComplexType {
+			name: "Breed"
+			extends -> "Object"
+			properties: [
+				Property {
+					name: "name" 
+					type -> "string"
+				}
+			]
+		}
+
+	]
+	
+}

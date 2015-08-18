@@ -1,0 +1,14 @@
+{
+	$namespace: "org.iworkz.qon.reference.countries"
+	$schema -> "org.iworkz.qon.reference.schema.ReferenceSchema"
+	
+	countries: [
+		Country {
+			name: "Australia"
+		},
+		Country {
+			name: "Austria"
+		}
+	]
+
+}
