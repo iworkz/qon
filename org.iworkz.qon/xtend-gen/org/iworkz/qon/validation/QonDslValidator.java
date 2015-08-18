@@ -35,30 +35,18 @@ public class QonDslValidator extends AbstractQonDslValidator {
   
   @Check
   public void checkPropertyName(final QProperty it) {
-    final String nameToCheck = it.getPropertyName();
     final QObject objectType = this._propertyHelper.getObjectType(it);
+    boolean _and = false;
     boolean _notEquals = (!Objects.equal(objectType, null));
-    if (_notEquals) {
-      final EList<QObject> properties = this._schemaHelper.getSchemaProperties(objectType);
-      boolean _notEquals_1 = (!Objects.equal(properties, null));
-      if (_notEquals_1) {
-        for (final QObject prop : properties) {
-          {
-            final String nameAttribute = this._propertyHelper.getStringProperty(prop, "name");
-            boolean _and = false;
-            boolean _notEquals_2 = (!Objects.equal(nameAttribute, null));
-            if (!_notEquals_2) {
-              _and = false;
-            } else {
-              boolean _equals = Objects.equal(nameAttribute, nameToCheck);
-              _and = _equals;
-            }
-            if (_and) {
-              return;
-            }
-          }
-        }
-      }
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      String _propertyName = it.getPropertyName();
+      boolean _hasSchemaPropertyWithName = this._schemaHelper.hasSchemaPropertyWithName(objectType, _propertyName);
+      boolean _equals = (_hasSchemaPropertyWithName == false);
+      _and = _equals;
+    }
+    if (_and) {
       this.error("Invalid property name", it, 
         QonDslPackage.Literals.QPROPERTY__PROPERTY_NAME);
     }

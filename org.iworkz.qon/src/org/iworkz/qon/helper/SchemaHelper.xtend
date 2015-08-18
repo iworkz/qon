@@ -36,6 +36,23 @@ class SchemaHelper {
 		return schemaProperty?.getProperty('type')
 	}
 	
+	def boolean hasSchemaPropertyWithName(QObject it, String nameToCheck) {
+		if (it != null) {
+			val properties = schemaProperties
+			if (properties != null) {
+				for (prop : properties) {
+					val nameAttribute = prop.getStringProperty("name")
+					if (nameAttribute != null && nameAttribute == nameToCheck) {
+						return true
+					}
+				}
+			}
+			val superType = getReferencedObjectProperty("extends")
+			return superType.hasSchemaPropertyWithName(nameToCheck)
+		}
+		return false
+	}
+	
 	def QObject getSchemaObject(EObject it) {
 		val container = eContainer
 		if (container != null) {

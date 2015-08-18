@@ -53,6 +53,35 @@ public class SchemaHelper {
     return _property;
   }
   
+  public boolean hasSchemaPropertyWithName(final QObject it, final String nameToCheck) {
+    boolean _notEquals = (!Objects.equal(it, null));
+    if (_notEquals) {
+      final EList<QObject> properties = this.getSchemaProperties(it);
+      boolean _notEquals_1 = (!Objects.equal(properties, null));
+      if (_notEquals_1) {
+        for (final QObject prop : properties) {
+          {
+            final String nameAttribute = this._propertyHelper.getStringProperty(prop, "name");
+            boolean _and = false;
+            boolean _notEquals_2 = (!Objects.equal(nameAttribute, null));
+            if (!_notEquals_2) {
+              _and = false;
+            } else {
+              boolean _equals = Objects.equal(nameAttribute, nameToCheck);
+              _and = _equals;
+            }
+            if (_and) {
+              return true;
+            }
+          }
+        }
+      }
+      final QObject superType = this._propertyHelper.getReferencedObjectProperty(it, "extends");
+      return this.hasSchemaPropertyWithName(superType, nameToCheck);
+    }
+    return false;
+  }
+  
   public QObject getSchemaObject(final EObject it) {
     final EObject container = it.eContainer();
     boolean _notEquals = (!Objects.equal(container, null));

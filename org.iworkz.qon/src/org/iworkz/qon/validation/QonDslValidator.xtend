@@ -29,23 +29,14 @@ class QonDslValidator extends AbstractQonDslValidator {
 
 	@Check
 	def checkPropertyName(QProperty it) {
-		val nameToCheck = propertyName
 		val objectType = getObjectType
-		if (objectType != null) {
-			val properties = objectType.schemaProperties
-			if (properties != null) {
-				for (prop : properties) {
-					val nameAttribute = prop.getStringProperty("name")
-					if (nameAttribute != null && nameAttribute == nameToCheck) {
-						return
-					}
-				}
-			}
+		if (objectType != null && objectType.hasSchemaPropertyWithName(propertyName) == false) {
 			error('Invalid property name', it,
 				QonDslPackage.Literals.QPROPERTY__PROPERTY_NAME)
-
 		}
 	}
+	
+
 	
 	@Check
 	def checkLinkPropertyType(QProperty it) {
