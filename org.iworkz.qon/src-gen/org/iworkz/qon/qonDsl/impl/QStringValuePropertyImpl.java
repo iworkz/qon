@@ -17,10 +17,10 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.QStringValuePropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

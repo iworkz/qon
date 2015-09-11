@@ -12,18 +12,17 @@ Person {
 		street: "Peter-Jordan-Strasse"
 		zip: "1180"
 		city: "Vienna"
-		country-> "Austria"
+		country-> "Australia"
 	}
-	pets: [ 
-		Dog {	
-			name: "Timmy"
-			breed-> "Border Collie"
-			dogTag: 12345678
-		},
-		Cat {	
-			name: "Tigger"
-			breed-> "British Shorthair"
-		}
-	]
+//	pets: [ 
+//		Dog {	
+//			name: "Timmy"
+//			breed-> "Border Collie"
+//			dogTag: 12345678
+//		},
+//		Cat {	
+//			name: "Tigger"
+//			breed-> "British Shorthair"
+//		}
+//	]
 }
-

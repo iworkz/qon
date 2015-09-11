@@ -19,10 +19,10 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.QLinkObjectPropertyImpl#getLink <em>Link</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

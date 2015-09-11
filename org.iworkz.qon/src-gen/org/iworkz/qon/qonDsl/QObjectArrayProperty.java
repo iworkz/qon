@@ -11,10 +11,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.QObjectArrayProperty#getValues <em>Values</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.iworkz.qon.qonDsl.QonDslPackage#getQObjectArrayProperty()
  * @model

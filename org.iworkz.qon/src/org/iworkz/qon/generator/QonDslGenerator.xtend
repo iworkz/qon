@@ -6,6 +6,13 @@ package org.iworkz.qon.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.iworkz.qon.qonDsl.QObject
+import com.google.inject.Inject
+import org.iworkz.qon.helper.PropertyHelper
+
+import static extension org.eclipse.emf.ecore.util.EcoreUtil.*
+import org.eclipse.emf.common.notify.impl.AdapterImpl
+import org.eclipse.emf.ecore.EObject
 
 /**
  * Generates code from your model files on save.
@@ -14,11 +21,52 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  */
 class QonDslGenerator implements IGenerator {
 	
-	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+	@Inject
+	var extension PropertyHelper
+	
+//	static class DocuAdapter extends AdapterImpl {
+//		
+//		val String docu = "123"
+//		
+//	}
+//	
+//	def getDocuAdapter(EObject obj) {
+//		 val adapter = obj.getExistingAdapter(typeof(QonDslGenerator.DocuAdapter)) as QonDslGenerator.DocuAdapter
+//		 if (adapter != null) {
+//		 	return adapter
+//		 }
+//		 val newAdapter = new DocuAdapter
+//		 // TODO read documentation
+//		 obj.eAdapters.add(newAdapter)
+//		 return newAdapter
+//	}
+//	
+//	def String getDocu(EObject obj) {	
+//		val adapter = obj.docuAdapter
+//		adapter.docu
+//	}
+	
+	override void doGenerate(Resource it, IFileSystemAccess fsa) {
+		 val rootObject = rootQObjectOfResource
+		 //val docu = rootObject.docu
+		 
+		 if ("Schema" == rootObject?.type?.getStringProperty("name")) {
+		 	 val name = URI.trimFileExtension.lastSegment
+		     fsa.generateFile(name+'.xtext', fileHeader(name))
+		 }	
+	}
+	
+	def QObject rootQObjectOfResource(Resource resource) {
+         if (resource.contents.size > 0 && resource.contents.get(0) instanceof QObject) {
+            return resource.contents.get(0) as QObject
+         }
+    }
+	
+	def fileHeader(String name) {
+		'''
+		grammar org.iworkz.demo.«name»Dsl with org.eclipse.xtext.common.Terminals
+
+		/* generate schemaDsl "http://www.iworkz.org/demo/«name»Dsl" */
+		'''
 	}
 }

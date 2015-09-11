@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.BooleanValue#isTrue <em>True</em>}</li>
  *   <li>{@link org.iworkz.qon.qonDsl.BooleanValue#isFalse <em>False</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.iworkz.qon.qonDsl.QonDslPackage#getBooleanValue()
  * @model

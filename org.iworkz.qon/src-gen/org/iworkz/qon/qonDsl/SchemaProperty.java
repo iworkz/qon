@@ -10,10 +10,10 @@ package org.iworkz.qon.qonDsl;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.SchemaProperty#getLink <em>Link</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.iworkz.qon.qonDsl.QonDslPackage#getSchemaProperty()
  * @model

@@ -24,10 +24,10 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.ImportPropertyImpl#getValues <em>Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

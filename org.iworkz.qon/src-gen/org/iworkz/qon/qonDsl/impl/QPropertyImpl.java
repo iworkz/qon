@@ -18,10 +18,10 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.QPropertyImpl#getPropertyName <em>Property Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

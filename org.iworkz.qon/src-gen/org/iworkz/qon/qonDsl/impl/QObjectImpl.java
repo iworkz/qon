@@ -28,12 +28,12 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.QObjectImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.QObjectImpl#getSystemProperties <em>System Properties</em>}</li>
  *   <li>{@link org.iworkz.qon.qonDsl.impl.QObjectImpl#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

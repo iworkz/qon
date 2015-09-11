@@ -5,10 +5,9 @@
 	breeds: [
 		Breed {
 			name: "Border Collie"
-		},
+		}, 
 		Breed {
 			name: "British Shorthair"
 		}
 	]
-
-}
+} 

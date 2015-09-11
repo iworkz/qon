@@ -4,10 +4,10 @@ Schema {
 	$imports: [
 		"org.iworkz.qon.schema.*"
 	]
-	
+
 	name: "ReferenceSchema"
 	
-	types: [
+	types: [  
 		
 		ComplexType {
 			name: "Object"
@@ -97,7 +97,7 @@ Schema {
 			name: "Cat"
 			extends -> "Pet"
 		},
-		
+	
 		ComplexType {
 			name: "Breed"
 			extends -> "Object"

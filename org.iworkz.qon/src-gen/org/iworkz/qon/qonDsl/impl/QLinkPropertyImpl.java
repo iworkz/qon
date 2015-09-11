@@ -11,8 +11,6 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>QLink Property</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

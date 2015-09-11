@@ -13,8 +13,6 @@ import org.iworkz.qon.qonDsl.QonDslPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>QSystem Property</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

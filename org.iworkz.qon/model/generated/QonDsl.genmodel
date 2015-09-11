@@ -4,7 +4,7 @@
     editorDirectory="/org.iworkz.qon.editor/src" modelPluginID="org.iworkz.qon" forceOverwrite="true"
     modelName="QonDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.iworkz.qon.edit"
-    editorPluginID="org.iworkz.qon.editor" runtimeVersion="2.10">
+    editorPluginID="org.iworkz.qon.editor" runtimeVersion="2.11">
   <genPackages prefix="QonDsl" basePackage="org.iworkz.qon" disposableProviderFactory="true"
       fileExtensions="qon" ecorePackage="QonDsl.ecore#/">
     <genClasses ecoreClass="QonDsl.ecore#//QRoot"/>
